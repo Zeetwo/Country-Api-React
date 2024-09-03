@@ -1,10 +1,12 @@
 import Data from "../Data"
 import CountryCard from './CountryCard'
 
-export default function CountriesList() {
+export default function CountriesList({query}) {
   return (
+    <>
     <div className="countries">
-      {Data.map((country) => {
+      {Data.filter((country)=> 
+      country.name.common.toLowerCase().includes(query)).map((country) => {
         return (
           <CountryCard
             key={country.name.common}
@@ -17,5 +19,6 @@ export default function CountriesList() {
         )
       })}
     </div>
+    </>
   )
-}
+} 

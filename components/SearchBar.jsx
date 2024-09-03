@@ -1,8 +1,8 @@
-export default function SearchBar() {
+export default function SearchBar({setQuery}) {
   return (
     <div className="search-container">
         <i className="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search for country"/>
+        <input onChange={(e) => setQuery(e.target.value.toLowerCase())} type="text" placeholder="Search for country"/>
     </div>
   )
 }
