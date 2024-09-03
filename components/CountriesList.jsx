@@ -1,7 +1,18 @@
-import Data from "../Data"
+// import Data from "../Data"
+import { useEffect, useState } from 'react'
 import CountryCard from './CountryCard'
 
 export default function CountriesList({query}) {
+  const [Data, setData] = useState ([])
+
+  useEffect(() =>{
+    fetch('https://restcountries.com/v3.1/all')
+    .then((res) => res.json())
+    .then((data) => {
+    setData(data)
+    })
+  } , [])
+
   return (
     <>
     <div className="countries">
