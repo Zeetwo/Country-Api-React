@@ -54,9 +54,9 @@ export default function CountryDetails() {
   if (notFound) {
     return <div>Country Not Found</div>;
   }
-  // if (!Data.length) {
-  //   return <CountriesDetailsShimmer/>
-  // }
+  if (!Data.length) {
+    return <CountriesDetailsShimmer/>
+  }
   return (
     Data && (
       <main>
