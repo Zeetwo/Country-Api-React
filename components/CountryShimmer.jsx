@@ -5,15 +5,9 @@ import './CountryShimmer.css'
 export default function CountryShimmer() {
   return (
     <div className='countries'>
-        <div className="country-card shimmer-card"></div>
-        <div className="country-card shimmer-card"></div>
-        <div className="country-card shimmer-card"></div>
-        <div className="country-card shimmer-card"></div>
-        <div className="country-card shimmer-card"></div>
-        <div className="country-card shimmer-card"></div>
-        <div className="country-card shimmer-card"></div>
-        <div className="country-card shimmer-card"></div>
-        <div className="country-card shimmer-card"></div>
+        {Array.from({length:10}).map((el ,i) => {
+        return <div key={i} className="country-card shimmer-card"></div>
+        })}
     </div>
   )
 }
