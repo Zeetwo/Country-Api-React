@@ -12,7 +12,7 @@ export default function Home() {
             <SearchBar setQuery ={setQuery}/>
             <SelectMenu/>
         </div>
-        <CountriesList query = {query}/>
+        {query === 'unmount' ? '' : <CountriesList query={query} />}
     </main>
   )
 }

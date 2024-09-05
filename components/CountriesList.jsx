@@ -9,7 +9,7 @@ export default function CountriesList({query}) {
     fetch('https://restcountries.com/v3.1/all')
     .then((res) => res.json())
     .then((data) => {
-    setData(data)
+      setData(data)
     })
   } , [])
 
