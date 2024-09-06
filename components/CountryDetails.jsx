@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import './CountryDetails.css'
-import { useParams, Link, useLocation } from 'react-router-dom'
+import { useParams, Link, useLocation, useOutletContext } from 'react-router-dom'
 // import CountriesDetailsShimmer from './CountriesDetailsShimmer'
 
 export default function CountryDetails() {
@@ -14,6 +14,7 @@ export default function CountryDetails() {
 
   const [Data, setData] = useState(null);
   const [notFound, setNotFound] = useState(false);
+  const [isDark] =useOutletContext()
 
   function updateCountryData(data){
     setData({
@@ -70,7 +71,7 @@ export default function CountryDetails() {
   // }
   return (
     Data && (
-      <main>
+      <main className={`${isDark ? 'dark' : ''}`}>
         <div className="country-details-container">
           <span className="back-btn" onClick={() => history.back()}>
             <i className="fa-solid fa-arrow-left"></i>&nbsp; Back
