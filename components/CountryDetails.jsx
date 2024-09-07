@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import './CountryDetails.css'
-import { useParams, Link, useLocation, useOutletContext } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
+import { ThemeContext } from '../contexts/ThemeContaxt'
 // import CountriesDetailsShimmer from './CountriesDetailsShimmer'
 
 export default function CountryDetails() {
@@ -14,7 +15,7 @@ export default function CountryDetails() {
 
   const [Data, setData] = useState(null);
   const [notFound, setNotFound] = useState(false);
-  const [isDark] =useOutletContext()
+  const [isDark] =useContext(ThemeContext)
 
   function updateCountryData(data){
     setData({
