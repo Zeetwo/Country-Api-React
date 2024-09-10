@@ -21,7 +21,7 @@ export default function CountriesList({query}) {
       ) : (
         <div className="countries">
           {Data.filter((country) =>
-            country.name.common.toLowerCase().includes(query)
+            country.name.common.toLowerCase().includes(query) || country.region.toLowerCase().includes(query)
           ).map((country) => {
             return (
               <CountryCard

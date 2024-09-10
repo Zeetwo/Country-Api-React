@@ -1,9 +1,9 @@
-export default function SelectMenu() {
+export default function SelectMenu({setQuery}) {
   return (
-    <select className="select-menu">
+    <select className="select-menu" onChange={(e) => setQuery(e.target.value.toLocaleLowerCase())}>
+        <option hidden>Filter by Region</option>
         <option value="Asia">Asia</option>
-        <option hidden="">Filter by Region</option>
-        <option value="America">America</option>
+        <option value="Americas">Americas</option>
         <option value="Africa">Africa</option>
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
